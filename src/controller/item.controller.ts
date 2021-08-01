@@ -6,6 +6,7 @@ import {Item} from '@/repository/types/item.model';
 import { logger } from '../common/logger';
 import { MESSAGE_INTERNAL_SERVER_ERROR } from '../common/exception.constants';
 import rateLimit from 'express-rate-limit';
+import { shortDateFormat } from '@/common/date';
 
 const apiRateLimiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
@@ -38,7 +39,8 @@ class ItemController implements Controller {
       if (!item) {
         item = {
           id,
-          viewCount: 1
+          viewCount: 1,
+          date: shortDateFormat(new Date()),
         };
       } else {
         ++item.viewCount;
