@@ -1,0 +1,30 @@
+{
+  "buildOnSave": false,
+  "compileOnSave": false,
+  "compilerOptions": {
+    "emitDecoratorMetadata": true,
+    "resolveJsonModule": true,
+    "experimentalDecorators": true,
+    "charset": "utf8",
+    "module": "commonjs",
+    "target": "es2018",
+    "lib": ["es2018"],
+    "noImplicitAny": false,
+    "removeComments": true,
+    "strictNullChecks": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "preserveConstEnums": true,
+    "sourceMap": false,
+    "esModuleInterop": true,
+    "outDir": "dist/src",
+    "noImplicitReturns": true,
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"] // resolve all modules prefixed with `@/` from `src` directory
+    }
+  },
+  "include": ["src"],
+  "typeRoots": ["node_modules/@types"]
+}
